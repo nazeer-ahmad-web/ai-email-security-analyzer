@@ -1,70 +1,65 @@
-🚀 Spam Email Detection using Machine Learning
+# 🛡️ AI Email Security Analyzer
 
-This project is a simple Machine Learning application that can tell whether a message is Spam ❌ or Not Spam ✅.
+An intelligent email classification system that detects and categorizes emails into **Safe**, **Spam**, and **Phishing** using a hybrid approach combining Machine Learning and rule-based risk analysis.
 
-I built this project to understand how NLP (Natural Language Processing) works in real-world problems like spam filtering.
+---
 
-📌 What this project does
-Cleans and processes text data
-Converts text into numerical form using TF-IDF
-Trains multiple models (Logistic Regression & Naive Bayes)
-Picks the best-performing model automatically
-Predicts whether a new message is spam or not
-Shows prediction confidence
-🧠 Tech Stack
-Python
-Pandas
-Scikit-learn
-NLP (TF-IDF Vectorization)
-📂 Dataset
+## 🚀 Features
 
-This project uses the SMS Spam Collection Dataset from Kaggle, which contains labeled messages:
+- 🔍 3-Class Classification: Safe / Spam / Phishing  
+- 🧠 Hybrid AI System (ML + Rule-based Detection)  
+- 🔗 URL Extraction & Domain Trust Analysis  
+- ⚠️ Suspicious Keyword Detection  
+- 📊 Risk Scoring System  
+- 🧾 Explainable AI (Reason-based output)  
+- 🎨 Interactive Streamlit UI  
+- 📜 Scan History Tracking  
 
-spam → unwanted messages
-ham → normal messages
-⚙️ How it works (in simple terms)
-Load the dataset
-Clean the text (remove symbols, numbers, etc.)
-Convert text into numbers using TF-IDF
-Train machine learning models
-Compare performance
-Use the best model to make predictions
-▶️ How to run
-1. Install dependencies
-pip install -r requirements.txt
-2. Run the project
-python spam_classifier.py
-📊 Results
-The model achieves around 95–98% accuracy
-It performs well on both spam and normal messages
-🧪 Example Predictions
-“Win a FREE iPhone now!!!” → Spam ❌
-“Hey, are we meeting today?” → Not Spam ✅
-“URGENT! Your account is blocked” → Spam ❌
-“Your OTP is 4582” → Not Spam ✅
-📁 Project Structure
-spam_email_detection/
+---
+
+## 🧠 How It Works
+
+1. **Text Processing** using TF-IDF Vectorization  
+2. **Machine Learning Model** (Naive Bayes) predicts base classification  
+3. **Risk Scoring System** analyzes:
+   - URLs  
+   - Keywords  
+   - Sensitive requests  
+4. **Domain Trust Logic** reduces false positives  
+5. Final classification into:
+   - 🟢 Safe  
+   - 🟡 Spam  
+   - 🔴 Phishing  
+
+---
+
+## 🛠️ Tech Stack
+
+- Python  
+- Scikit-learn  
+- Streamlit  
+- NLP (TF-IDF)  
+- Naive Bayes  
+
+---
+
+## 📁 Project Structure
+
+
+ai-email-security-analyzer/
 │
-├── dataset/
-│   └── spam.csv
+├── app.py
 ├── spam_classifier.py
+├── model.pkl
+├── vectorizer.pkl
 ├── requirements.txt
 └── README.md
-💾 Output
 
-After running the project, it saves:
 
-model.pkl → trained model
-vectorizer.pkl → text vectorizer
-🔮 Future Improvements
-Add a web interface (Streamlit or Flask)
-Deploy the project online
-Improve model using deep learning
-Integrate with email systems
-🎯 Why I built this
+---
 
-I wanted to understand how machine learning can be applied to real-world problems like spam detection and improve my skills in NLP and model building.
+## ▶️ How to Run Locally
 
-👨‍💻 Author
-
-Shaik Nazeer Ahmad
+```bash
+pip install -r requirements.txt
+streamlit run app.py
